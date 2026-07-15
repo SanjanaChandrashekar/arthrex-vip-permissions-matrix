@@ -37,8 +37,8 @@ Provides a clean, searchable, dark-themed interface for reviewing which roles ha
 - Flow-style status transition display showing which statuses each role can move a case to
 
 ---
-https://github.com/user-attachments/assets/2565d2a1-2f84-4ace-b37d-dd88be9d978d
-
+https://github.com/user-attachments/assets/ecbcaee6-8d17-485d-82db-267d621c0363
+---
 ## Tech Stack
 
 | Technology | Details                              |
