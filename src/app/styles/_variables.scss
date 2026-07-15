@@ -1,0 +1,35 @@
+// ── Arthrex VIP App — Exact Theme Variables ──
+
+// Backgrounds
+$bg: #181c27;               // main page background
+$card: #1e2230;             // table/card surface
+$header-bg: #0d0f18;        // top nav bar (near-black)
+$table-header-bg: #252a38;  // column header row
+$hover-row: #242938;        // row hover
+$controls-bg: #13172280;    // search/controls bg (semi-transparent)
+
+// Borders
+$border: #2c3248;
+
+// Text
+$text: #e0e6ed;             // primary text (light grey-white)
+$text-secondary: #8a95a3;   // muted labels
+
+// Accent — VIP cyan-blue
+$primary: #4db8ff;
+$primary-light: #6bc8ff;
+$primary-bg: rgba(77, 184, 255, 0.12);
+
+// Permission badges — match VIP green/red
+$yes: #4caf7d;
+$yes-bg: rgba(76, 175, 125, 0.15);
+
+$no: #e05252;
+$no-bg: rgba(224, 82, 82, 0.15);
+
+$na: #5c6a80;
+$na-bg: rgba(92, 106, 128, 0.13);
+
+// Misc
+$radius: 4px;
+$font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;

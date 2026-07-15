@@ -1,0 +1,13 @@
+<div class="view-toggle" role="tablist" aria-label="View mode">
+  @for (tab of tabs; track tab.id) {
+    <button
+      class="tab-btn"
+      [class.active]="svc.currentView() === tab.id"
+      (click)="selectView(tab.id)"
+      role="tab"
+      [attr.aria-selected]="svc.currentView() === tab.id"
+    >
+      {{ tab.label }}
+    </button>
+  }
+</div>

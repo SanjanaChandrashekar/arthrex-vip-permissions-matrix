@@ -1,0 +1,85 @@
+@use '../../styles/variables' as v;
+
+.header {
+  background: v.$header-bg;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: stretch;
+  height: 52px;
+  border-bottom: 1px solid #1a1f2e;
+  box-shadow: 0 1px 8px rgba(0,0,0,0.45);
+}
+
+.header-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0 1.5rem;
+}
+
+.header-arthrex {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.01em;
+}
+
+.header-sep {
+  color: #3a4460;
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+.header-product {
+  font-size: 0.92rem;
+  font-weight: 400;
+  color: #b8c5d4;
+  letter-spacing: 0.01em;
+}
+
+.header-version {
+  font-size: 0.68rem;
+  font-weight: 500;
+  color: v.$text-secondary;
+  background: rgba(77, 184, 255, 0.08);
+  padding: 0.13rem 0.4rem;
+  border-radius: 3px;
+  border: 1px solid rgba(77, 184, 255, 0.2);
+  margin-left: 0.25rem;
+
+  @media (max-width: 600px) {
+    display: none;
+  }
+}
+
+.header-nav {
+  margin-left: auto;
+  display: flex;
+  align-items: stretch;
+}
+
+.header-nav-item {
+  padding: 0 1.4rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #6b7b8e;
+  display: flex;
+  align-items: center;
+  border-bottom: 2px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+  cursor: pointer;
+  user-select: none;
+
+  &:hover:not(.active) {
+    color: #c4cdd8;
+  }
+
+  &.active {
+    color: v.$primary;
+    border-bottom-color: v.$primary;
+  }
+}

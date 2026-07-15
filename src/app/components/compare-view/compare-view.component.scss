@@ -1,0 +1,135 @@
+@use '../../styles/variables' as v;
+
+.compare-view {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.chip-row {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.chip-label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: v.$text-secondary;
+  margin-right: 0.25rem;
+}
+
+.role-chip {
+  padding: 0.45rem 0.9rem;
+  border-radius: v.$radius;
+  border: 1px solid v.$border;
+  background: v.$controls-bg;
+  cursor: pointer;
+  font-size: 0.82rem;
+  font-family: v.$font;
+  font-weight: 500;
+  color: #6b7d94;
+  transition: all 0.2s;
+  user-select: none;
+
+  &:hover:not(.selected) {
+    border-color: #4a6a85;
+    color: v.$text;
+  }
+
+  &.selected {
+    background: v.$primary;
+    border-color: v.$primary;
+    color: #fff;
+  }
+}
+
+.table-wrap {
+  background: v.$card;
+  border: 1px solid v.$border;
+  border-radius: v.$radius;
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+
+thead th {
+  background: v.$table-header-bg;
+  padding: 0.75rem 1rem;
+  text-align: center;
+  font-weight: 600;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: v.$text-secondary;
+  border-bottom: 2px solid v.$border;
+  white-space: nowrap;
+
+  &.action-col {
+    text-align: left;
+    min-width: 280px;
+  }
+}
+
+tbody tr {
+  transition: background 0.15s;
+
+  &:hover {
+    background: v.$hover-row;
+  }
+}
+
+tbody td {
+  padding: 0.6rem 1rem;
+  border-bottom: 1px solid v.$border;
+  text-align: center;
+  vertical-align: middle;
+
+  &.action-cell {
+    text-align: left;
+    font-weight: 500;
+    color: v.$text;
+  }
+
+  &.perm-cell {
+    white-space: nowrap;
+  }
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.2rem 0.6rem;
+  border-radius: v.$radius;
+  font-size: 0.75rem;
+  font-weight: 600;
+  min-width: 42px;
+
+  &.badge-yes {
+    background: v.$yes-bg;
+    color: v.$yes;
+  }
+
+  &.badge-no {
+    background: v.$no-bg;
+    color: v.$no;
+  }
+
+  &.badge-na {
+    background: v.$na-bg;
+    color: v.$na;
+  }
+}
+
+.no-results {
+  text-align: center;
+  padding: 3rem;
+  color: v.$text-secondary;
+  font-size: 0.95rem;
+}

@@ -1,0 +1,102 @@
+@use '../../styles/variables' as v;
+
+.table-wrap {
+  background: v.$card;
+  border: 1px solid v.$border;
+  border-radius: v.$radius;
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.83rem;
+  font-family: v.$font;
+}
+
+thead th {
+  background: v.$table-header-bg;
+  padding: 0.7rem 1rem;
+  text-align: center;
+  font-weight: 600;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: v.$text-secondary;
+  border-bottom: 1px solid v.$border;
+  white-space: nowrap;
+
+  &.action-col {
+    text-align: left;
+    min-width: 300px;
+    padding-left: 1.25rem;
+  }
+}
+
+tbody tr {
+  transition: background 0.12s;
+
+  &:nth-child(even) {
+    background: rgba(255,255,255,0.02);
+  }
+
+  &:hover {
+    background: v.$hover-row;
+  }
+}
+
+tbody td {
+  padding: 0.55rem 1rem;
+  border-bottom: 1px solid rgba(44,50,72,0.7);
+  text-align: center;
+  vertical-align: middle;
+
+  &.action-cell {
+    text-align: left;
+    font-weight: 400;
+    color: v.$text;
+    padding-left: 1.25rem;
+    line-height: 1.4;
+  }
+
+  &.perm-cell {
+    white-space: nowrap;
+  }
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.18rem 0.55rem;
+  border-radius: 3px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  min-width: 38px;
+  letter-spacing: 0.02em;
+
+  &.badge-yes {
+    background: v.$yes-bg;
+    color: v.$yes;
+    border: 1px solid rgba(76, 175, 125, 0.25);
+  }
+
+  &.badge-no {
+    background: v.$no-bg;
+    color: v.$no;
+    border: 1px solid rgba(224, 82, 82, 0.25);
+  }
+
+  &.badge-na {
+    background: v.$na-bg;
+    color: v.$na;
+    border: 1px solid rgba(92, 106, 128, 0.2);
+  }
+}
+
+.no-results {
+  text-align: center;
+  padding: 3rem;
+  color: v.$text-secondary;
+  font-size: 0.95rem;
+}

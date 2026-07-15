@@ -1,0 +1,27 @@
+@use 'styles/variables' as v;
+
+.controls {
+  max-width: 1400px;
+  margin: 1.25rem auto;
+  padding: 0 2rem;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: center;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 0 1rem;
+  }
+}
+
+.main {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem 3rem;
+
+  @media (max-width: 768px) {
+    padding: 0 1rem 2rem;
+  }
+}

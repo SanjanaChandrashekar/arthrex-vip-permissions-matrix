@@ -1,0 +1,48 @@
+<div class="cs-wrap">
+  <div class="cs-header">
+    <div class="product-tabs">
+      @for (pt of productTabs; track pt.id) {
+        <button
+          class="product-tab-btn"
+          [class.active]="productTab() === pt.id"
+          (click)="productTab.set(pt.id)"
+        >{{ pt.label }}</button>
+      }
+    </div>
+    <h2 class="cs-title">{{ productTab() === 'ots' ? 'OTS' : 'PSB' }} — Manual Case Status Change Permissions</h2>
+    <div class="role-tabs">
+      @for (tab of roleTabs; track tab.id) {
+        <button
+          class="role-tab-btn"
+          [class.active]="roleTab() === tab.id"
+          (click)="roleTab.set(tab.id)"
+        >{{ tab.label }}</button>
+      }
+    </div>
+    @if (activeNote()) {
+      <p class="cs-note">{{ activeNote() }}</p>
+    }
+  </div>
+  <div class="cs-col-header">
+    <span class="col-label">Original Case Status</span>
+    <span class="col-arrow"></span>
+    <span class="col-label">Can Change To</span>
+  </div>
+
+  <div class="transition-list">
+    @for (t of transitions(); track t.from) {
+      <div class="transition-row">
+        <div class="from-badge">{{ t.from }}</div>
+        <div class="arrow">→</div>
+        <div class="to-chips">
+          @if (t.canChangeTo.length === 0) {
+            <span class="chip chip-locked">No changes allowed</span>
+          }
+          @for (status of t.canChangeTo; track status) {
+            <span class="chip chip-allowed">{{ status }}</span>
+          }
+        </div>
+      </div>
+    }
+  </div>
+</div>

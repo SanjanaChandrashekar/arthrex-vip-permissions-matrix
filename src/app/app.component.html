@@ -1,0 +1,29 @@
+<app-header
+  [activeTab]="activeTab()"
+  (tabChange)="activeTab.set($event)"
+></app-header>
+
+@if (activeTab() === 'permissions') {
+  <div class="controls">
+    <app-search-bar></app-search-bar>
+    <app-view-toggle></app-view-toggle>
+  </div>
+
+  <main class="main">
+    @if (svc.currentView() === 'table') {
+      <app-table-view></app-table-view>
+    }
+    @if (svc.currentView() === 'compare') {
+      <app-compare-view></app-compare-view>
+    }
+    @if (svc.currentView() === 'cards') {
+      <app-cards-view></app-cards-view>
+    }
+  </main>
+}
+
+@if (activeTab() === 'case-status') {
+  <main class="main">
+    <app-case-status></app-case-status>
+  </main>
+}

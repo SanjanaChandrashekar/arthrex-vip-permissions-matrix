@@ -1,0 +1,33 @@
+@use '../../styles/variables' as v;
+
+.view-toggle {
+  display: flex;
+  background: v.$controls-bg;
+  border: 1px solid v.$border;
+  border-radius: v.$radius;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.tab-btn {
+  padding: 0.55rem 1.1rem;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-family: v.$font;
+  font-weight: 500;
+  color: #6b7d94;
+  transition: background 0.15s, color 0.15s;
+  white-space: nowrap;
+
+  &.active {
+    background: v.$primary;
+    color: #fff;
+  }
+
+  &:hover:not(.active) {
+    background: v.$card;
+    color: v.$text;
+  }
+}

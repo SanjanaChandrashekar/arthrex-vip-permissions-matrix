@@ -1,0 +1,33 @@
+<div class="table-wrap">
+  <table>
+    <thead>
+      <tr>
+        <th class="action-col">Action ({{ svc.filteredPermissions().length }})</th>
+        @for (role of roles; track role) {
+          <th>{{ role }}</th>
+        }
+      </tr>
+    </thead>
+    <tbody>
+      @if (svc.filteredPermissions().length === 0) {
+        <tr>
+          <td [attr.colspan]="roles.length + 1" class="no-results">
+            No actions match your search.
+          </td>
+        </tr>
+      }
+      @for (entry of svc.filteredPermissions(); track entry.action) {
+        <tr class="animate-in">
+          <td class="action-cell" [innerHTML]="entry.action | highlight : svc.searchTerm()"></td>
+          @for (role of roles; track role) {
+            <td class="perm-cell">
+              <span class="badge" [ngClass]="badgeClass(entry.permissions[role])">
+                {{ entry.permissions[role] }}
+              </span>
+            </td>
+          }
+        </tr>
+      }
+    </tbody>
+  </table>
+</div>

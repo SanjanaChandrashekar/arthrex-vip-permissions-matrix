@@ -1,0 +1,188 @@
+@use '../../styles/variables' as v;
+
+.cs-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 900px;
+}
+
+.cs-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.cs-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: v.$text;
+  margin: 0;
+}
+
+.product-tabs {
+  display: flex;
+  gap: 0;
+  background: v.$controls-bg;
+  border: 1px solid v.$border;
+  border-radius: v.$radius;
+  overflow: hidden;
+  align-self: flex-start;
+  margin-bottom: 0.5rem;
+}
+
+.product-tab-btn {
+  padding: 0.4rem 1.1rem;
+  border: none;
+  background: transparent;
+  color: #6b7d94;
+  font-size: 0.82rem;
+  font-family: v.$font;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+  letter-spacing: 0.04em;
+  user-select: none;
+
+  &.active {
+    background: v.$primary;
+    color: #fff;
+  }
+
+  &:hover:not(.active) {
+    background: v.$card;
+    color: v.$text;
+  }
+}
+
+.role-tabs {
+  display: flex;
+  gap: 0.35rem;
+  margin-top: 0.6rem;
+}
+
+.role-tab-btn {
+  padding: 0.35rem 0.9rem;
+  border-radius: v.$radius;
+  border: 1px solid v.$border;
+  background: v.$controls-bg;
+  color: #6b7d94;
+  font-size: 0.8rem;
+  font-family: v.$font;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s;
+  user-select: none;
+
+  &.active {
+    background: v.$primary;
+    border-color: v.$primary;
+    color: #fff;
+  }
+
+  &:hover:not(.active) {
+    border-color: #4a6a85;
+    color: v.$text;
+  }
+}
+
+.cs-note {
+  margin: 0.4rem 0 0;
+  font-size: 0.78rem;
+  color: v.$text-secondary;
+  font-style: italic;
+}
+
+.cs-col-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0 1rem;
+}
+
+.col-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: v.$text-secondary;
+
+  &:first-child {
+    min-width: 148px;
+    text-align: center;
+  }
+}
+
+.col-arrow {
+  width: 1.4rem;
+  flex-shrink: 0;
+}
+
+.transition-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.transition-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem 1rem;
+  background: v.$card;
+  border: 1px solid v.$border;
+  border-radius: v.$radius;
+  flex-wrap: wrap;
+  transition: border-color 0.15s;
+
+  &:hover {
+    border-color: #3a4a5e;
+  }
+}
+
+.from-badge {
+  min-width: 148px;
+  padding: 0.35rem 0.75rem;
+  background: v.$controls-bg;
+  border: 1px solid v.$border;
+  border-radius: v.$radius;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: v.$text;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.arrow {
+  font-size: 1.1rem;
+  color: v.$primary-light;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.to-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  flex: 1;
+}
+
+.chip {
+  padding: 0.3rem 0.7rem;
+  border-radius: v.$radius;
+  font-size: 0.78rem;
+  font-weight: 600;
+  white-space: nowrap;
+
+  &.chip-allowed {
+    background: v.$yes-bg;
+    color: v.$yes;
+  }
+
+  &.chip-locked {
+    background: v.$no-bg;
+    color: v.$no;
+    font-style: italic;
+    font-weight: 500;
+  }
+}

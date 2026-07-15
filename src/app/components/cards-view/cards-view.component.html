@@ -1,0 +1,42 @@
+<div class="cards-view">
+  <div class="chip-row">
+    <button
+      class="role-chip"
+      [class.active]="isAllSelected()"
+      [class.dashed]="true"
+      (click)="toggleAll()"
+    >
+      All Roles
+    </button>
+    @for (role of allRoles; track role) {
+      <button
+        class="role-chip"
+        [class.active]="svc.activeRoles().has(role)"
+        (click)="toggleRole(role)"
+      >
+        {{ role }}
+      </button>
+    }
+  </div>
+
+  @if (svc.filteredPermissions().length === 0) {
+    <div class="no-results">No actions match your search.</div>
+  }
+
+  <div class="cards-list">
+    @for (entry of svc.filteredPermissions(); track entry.action) {
+      <div class="action-card animate-in">
+        <h3 class="card-title" [innerHTML]="entry.action | highlight : svc.searchTerm()"></h3>
+        <div class="perm-tags">
+          @for (role of visibleRoles(); track role) {
+            <span class="perm-tag" [ngClass]="tagClass(entry.permissions[role])">
+              <span class="perm-dot"></span>
+              <span class="perm-role">{{ role }}</span>
+              <span class="perm-badge">{{ entry.permissions[role] }}</span>
+            </span>
+          }
+        </div>
+      </div>
+    }
+  </div>
+</div>
